@@ -8,4 +8,8 @@ function App() {
   );
 }
 
+function Abc() {
+  console.log('test');
+}
+
 export default App;

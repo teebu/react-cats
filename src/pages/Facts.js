@@ -18,7 +18,10 @@ function Facts() {
     setFacts(res_json.data);
     // console.log(res_json.data);
     // console.log(_.map(res_json.data, e => _.pick(e, ['fact'])));
+    // console.log('facts')
   };
+
+
 
   return (
     <div>

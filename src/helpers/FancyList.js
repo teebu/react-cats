@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css';
-
+import _ from 'lodash';
 
 function FancyList(props) {
   // console.log(props);
-  const data = joinJson(props.data)
+  const data = createChildren(props.data)
   // console.log(data);
 
   return (
@@ -16,18 +16,15 @@ function FancyList(props) {
   );
 }
 
-function joinJson(obj) {
-  return (obj.map(e => createChildren(e)))
-}
-
-function createChildren(obj) {
-  const children = []
-  for (let [key, value] of Object.entries(obj)) {
-    if (key !== 'length' && value) { // we don't want the length key. it's useless
-      children.push(<>{`${key}: ${value}`}<br/></>)
-    }
-  }
-  return children;
+function createChildren(data) {
+  // takes an array of objects and returns an array of jsx components
+  return _.map(data, obj => {
+    const children = [];
+    _.forOwn(obj, function (value, key) {
+      if (value) children.push(<div>{`${key}: ${value}`}</div>)
+    });
+    return children;
+  });
 }
 
 export default FancyList;

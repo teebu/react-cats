@@ -4,6 +4,8 @@ import Nav from "./helpers/nav";
 import About from "./pages/About";
 import Facts from "./pages/Facts";
 import Breeds from "./pages/Breeds";
+import CatDetail from "./pages/CatDetail";
+import Cat from "./helpers/Cat";
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 
@@ -13,10 +15,11 @@ function App() {
       <div className="App">
         <Nav/>
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/breeds" component={Breeds}/>
-          <Route path="/facts" component={Facts}/>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+          <Route path="/breeds" component={Breeds} />
+          <Route path="/facts" component={Facts} />
+          <Route path="/cat/:id" exact component={CatDetail} />
         </Switch>
       </div>
     </Router>
@@ -26,6 +29,7 @@ function App() {
 const Home = () => (
   <div>
     <h1>Cats</h1>
+    <Cat maxHeight={600} maxWidth={600} borderRadius={'12px'} delay={500} />
     <div className="intro">Click <Link to='/facts'>facts</Link> to see random facts about cats.</div>
   </div>
 );

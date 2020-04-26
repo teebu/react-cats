@@ -27,14 +27,16 @@ function Cat({maxWidth = 200, maxHeight = 200, borderRadius = '90px', delay = 10
   };
 
   let imgStyle = {
-    width: Fit(catData[0].width || maxWidth, catData[0].height, maxWidth, maxHeight).width + 'px',
-    height: Fit(catData[0].width || maxWidth, catData[0].height, maxWidth, maxHeight).height + 'px',
-    maxWidth: `${maxWidth}px`, maxHeight: `${maxHeight}px`, borderRadius: borderRadius
+    width: Fit(catData[0].width || maxWidth, catData[0].height, maxWidth, maxHeight).width,
+    height: Fit(catData[0].width || maxWidth, catData[0].height, maxWidth, maxHeight).height,
+    maxWidth: maxWidth,
+    maxHeight: maxHeight,
+    borderRadius: borderRadius
   }
 
   return (
     <div>
-      <Link to={`/cat/${catData[0].id}`}>
+      <Link to={`/cat/${catData[0].id}`} className='shadowlink'>
         <ImageHolder style={{width: catData[0].width, height: catData[0].height, ...imgStyle}}
                      delay={delay}
                      src={catData[0].url} alt='cat'/>

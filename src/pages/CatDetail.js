@@ -35,6 +35,7 @@ function CatDetail({match}) {
     <div>
       <h1>Cat Details</h1>
       <img src={catData.url} style={imgStyle} alt=''/>
+      <div>{catData.url}</div>
     </div>
   )
 }

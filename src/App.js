@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Nav from "./helpers/nav";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Facts from "./pages/Facts";
 import Breeds from "./pages/Breeds";
@@ -28,12 +29,5 @@ function App() {
   );
 }
 
-const Home = () => (
-  <div>
-    <h1>Cats</h1>
-    <Cat maxHeight={600} maxWidth={600} borderRadius={'12px'} delay={500} />
-    <div className="intro">Click <Link to='/facts'>facts</Link> to see random facts about cats.</div>
-  </div>
-);
 
 export default App;

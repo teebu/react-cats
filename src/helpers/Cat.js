@@ -22,8 +22,8 @@ function Cat({maxWidth = 200, maxHeight = 200, borderRadius = '90px', delay = 10
     const res_json = await res.json();
     setCatData(res_json);
     // setIsLoading(false)
-    console.log(res_json);
-    console.log('cats')
+    // console.log(res_json);
+    console.log('cat image set')
   };
 
   let imgStyle = {

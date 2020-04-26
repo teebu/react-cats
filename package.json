@@ -28,7 +28,7 @@
       "not dead",
       "not op_mini all"
     ],
-    "homepage": "http://teebu.github.io/react-cats",
+    "homepage": "https://teebu.github.io/react-cats",
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

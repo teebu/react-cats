@@ -12,7 +12,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/react-cats/'>
       <div className="App">
         <Nav/>
         <Switch>

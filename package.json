@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --testURL http://localhost/react-cats",
+    "test": "react-scripts test --testURL=http://localhost/react-cats",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

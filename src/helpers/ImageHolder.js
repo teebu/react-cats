@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../App.css';
 import ProgressiveImage from "react-progressive-graceful-image";
 import './utils'
-import {removeEmpty} from "./utils";
+import {removeNull} from "./utils";
 
 function ImageHolder({src, width, height, maxWidth, maxHeight, style, className, alt, delay, placeholder}) {
 
@@ -14,9 +14,11 @@ function ImageHolder({src, width, height, maxWidth, maxHeight, style, className,
     ...style
   };
 
+  imgStyle = removeNull(imgStyle); // remove null values
+
   const plainHolder = (
     <div className="placeHolder animate"
-         style={removeEmpty(imgStyle)}
+         style={imgStyle}
     />
   )
 
@@ -27,7 +29,7 @@ function ImageHolder({src, width, height, maxWidth, maxHeight, style, className,
         delay={delay}
         src={src} placeholder=''>
         {(src, loading) => {
-          return loading ? placeholder || plainHolder : <img src={src} alt={alt} className={className} style={removeEmpty({...style, ...imgStyle})}/>
+          return loading ? placeholder || plainHolder : <img src={src} alt={alt} className={className} style={imgStyle}/>
         }}
       </ProgressiveImage>
       </>

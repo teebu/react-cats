@@ -8,8 +8,6 @@ on:
   push:
     branches: [ master ]
 
-
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -24,6 +22,14 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '13'
+    - name: Cache Node.js modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
 
     - name: Install Dependencies
       run: npm install
@@ -34,7 +40,7 @@ jobs:
     - name: Build
       run: npm run build --if-present
       env:
-        CI: true
+        CI: false # setting CI=false makes warnings not Exit the flow.
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

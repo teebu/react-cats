@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Facts from "./pages/Facts";
 import Breeds from "./pages/Breeds";
 import CatDetail from "./pages/CatDetail";
-import Cat from "./helpers/Cat";
 import Cats from "./pages/Cats";
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 

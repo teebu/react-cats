@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css';
 import ProgressiveImage from "react-progressive-graceful-image";
+import './utils'
+import {removeEmpty} from "./utils";
 
 function ImageHolder({src, width, height, maxWidth, maxHeight, style, className, alt, delay, placeholder}) {
 
-  const imgStyle = {
+  let imgStyle = {
     width: Fit(width, height, maxWidth, maxHeight).width,
     height: Fit(width, height, maxWidth, maxHeight).height,
     maxWidth: maxWidth,
@@ -14,7 +16,7 @@ function ImageHolder({src, width, height, maxWidth, maxHeight, style, className,
 
   const plainHolder = (
     <div className="placeHolder animate"
-         style={imgStyle}
+         style={removeEmpty(imgStyle)}
     />
   )
 
@@ -25,7 +27,7 @@ function ImageHolder({src, width, height, maxWidth, maxHeight, style, className,
         delay={delay}
         src={src} placeholder=''>
         {(src, loading) => {
-          return loading ? placeholder || plainHolder : <img src={src} alt={alt} className={className} style={{...style, ...imgStyle}}/>
+          return loading ? placeholder || plainHolder : <img src={src} alt={alt} className={className} style={removeEmpty({...style, ...imgStyle})}/>
         }}
       </ProgressiveImage>
       </>

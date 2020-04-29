@@ -21,6 +21,7 @@ function App() {
           <Route path="/breeds" component={Breeds} />
           <Route path="/facts" component={Facts} />
           <Route path="/cat/:id" exact component={CatDetail} />
+          <Route component={Home} />
         </Switch>
       </div>
     </Router>

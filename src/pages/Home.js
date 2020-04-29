@@ -73,9 +73,10 @@ const Home = () => {
   );
 
   const IntervalRendererComponent = () => (
-    <IntervalRenderer interval={5000}
-                      shouldComponentRerender={() => true}
-                      componentDidRerender={() => (console.log('componentDidRerender'))}
+    <IntervalRenderer
+      interval={5000}
+      shouldComponentRerender={() => true}
+      componentDidRerender={() => (console.log('componentDidRerender'))}
     >
       <ChildComponent2/>
     </IntervalRenderer>

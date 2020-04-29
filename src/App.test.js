@@ -4,7 +4,7 @@ import App from './App';
 import './__mocks__/intersectionObserverMock' //# observer errors if not mocking this "observer.disconnect is not a function"
 
 test('expect to pass', () => {
-  expect(false).toBeTruthy();
+  expect(true).toBeTruthy();
 });
 
 test('renders Meow!', () => {

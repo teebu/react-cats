@@ -15,13 +15,12 @@ function App() {
       <div className="App">
         <Nav/>
         <Switch>
-          <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/cats" exact><Cats size={15}/></Route>
           <Route path="/breeds" component={Breeds} />
           <Route path="/facts" component={Facts} />
           <Route path="/cat/:id" exact component={CatDetail} />
-          <Route component={Home} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>

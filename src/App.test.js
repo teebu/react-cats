@@ -5,6 +5,6 @@ import './__mocks__/intersectionObserverMock' //# observer errors if not mocking
 
 test('renders learn react link', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/Meow!/i);
+  const linkElement = getByText(/Meowz!/i);
   expect(linkElement).toBeInTheDocument();
 });

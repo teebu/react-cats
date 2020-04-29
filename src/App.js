@@ -7,7 +7,7 @@ import Facts from "./pages/Facts";
 import Breeds from "./pages/Breeds";
 import CatDetail from "./pages/CatDetail";
 import Cats from "./pages/Cats";
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 function App() {
   return (
@@ -15,12 +15,12 @@ function App() {
       <div className="App">
         <Nav/>
         <Switch>
+          <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/cats" exact><Cats size={15}/></Route>
           <Route path="/breeds" component={Breeds} />
           <Route path="/facts" component={Facts} />
           <Route path="/cat/:id" exact component={CatDetail} />
-          <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>

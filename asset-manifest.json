@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-cats/static/css/main.7276e988.chunk.css",
-    "main.js": "/react-cats/static/js/main.98596c7a.chunk.js",
-    "main.js.map": "/react-cats/static/js/main.98596c7a.chunk.js.map",
+    "main.js": "/react-cats/static/js/main.506ec2f0.chunk.js",
+    "main.js.map": "/react-cats/static/js/main.506ec2f0.chunk.js.map",
     "runtime-main.js": "/react-cats/static/js/runtime-main.968b7f61.js",
     "runtime-main.js.map": "/react-cats/static/js/runtime-main.968b7f61.js.map",
     "static/js/2.744eb1f7.chunk.js": "/react-cats/static/js/2.744eb1f7.chunk.js",
     "static/js/2.744eb1f7.chunk.js.map": "/react-cats/static/js/2.744eb1f7.chunk.js.map",
     "index.html": "/react-cats/index.html",
-    "precache-manifest.5540c09e6f2eb1219ad82f152a7ceb48.js": "/react-cats/precache-manifest.5540c09e6f2eb1219ad82f152a7ceb48.js",
+    "precache-manifest.1779e3b794b29f244e2505a024d94217.js": "/react-cats/precache-manifest.1779e3b794b29f244e2505a024d94217.js",
     "service-worker.js": "/react-cats/service-worker.js",
     "static/css/main.7276e988.chunk.css.map": "/react-cats/static/css/main.7276e988.chunk.css.map",
     "static/js/2.744eb1f7.chunk.js.LICENSE.txt": "/react-cats/static/js/2.744eb1f7.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.968b7f61.js",
     "static/js/2.744eb1f7.chunk.js",
     "static/css/main.7276e988.chunk.css",
-    "static/js/main.98596c7a.chunk.js"
+    "static/js/main.506ec2f0.chunk.js"
   ]
 }

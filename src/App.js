@@ -11,7 +11,7 @@ import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 function App() {
   return (
-    <Router basename='/react-cats'> {/*Added basename to handle gh-pages subfolder pathing*/}
+    <Router basename='/'> {/*Added basename to handle gh-pages subfolder pathing*/}
       <div className="App">
         <Nav/>
         <Switch>

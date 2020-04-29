@@ -5,7 +5,7 @@ import './__mocks__/intersectionObserverMock' //# observer errors if not mocking
 
 test('renders Meow!', () => {
   const { getByText } = render(<App />);
-  const ele = getByText(/Meow!/i);
+  const ele = getByText(/Meowz!/i);
   expect(ele).toBeInTheDocument();
 });
 

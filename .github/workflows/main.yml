@@ -8,10 +8,6 @@ on:
   push:
     branches: [ master ]
 
-env:
-  # If CI is true (default) it will treat warnings as errors
-  CI: false
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -35,6 +31,8 @@ jobs:
 
     - name: Test
       run: npm test
+      env:
+        CI: true
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

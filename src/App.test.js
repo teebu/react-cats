@@ -3,6 +3,10 @@ import { render } from '@testing-library/react';
 import App from './App';
 import './__mocks__/intersectionObserverMock' //# observer errors if not mocking this "observer.disconnect is not a function"
 
+test('expect to fail', () => {
+  expect(false).toBeTruthy();
+});
+
 test('renders Meow!', () => {
   const { getByText } = render(<App />);
   const ele = getByText(/Meow!/i);

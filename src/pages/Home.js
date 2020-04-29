@@ -85,7 +85,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>React Cats 2</h1>
+      <h1>React Cats 3</h1>
       <IntervalRerenderComponent4/>
     </div>
   )

@@ -8,8 +8,7 @@ on:
   push:
     branches: [ master ]
 
-env:
-  CI: false
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,11 +28,13 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Build
-      run: npm run build --if-present
-
     - name: Test
       run: npm test
+
+    - name: Build
+      run: npm run build --if-present
+      env:
+        CI: true
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

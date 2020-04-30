@@ -30,7 +30,7 @@ function Cats({size = 5}) {
           <li style={{borderRadius: '120px'}}>
             <Link to={`/cat/${cat.id}`}>
               <ImageHolder width={cat.width} height={cat.height}
-                           maxWidth={240} maxHeight={240}
+                           maxWidth={200} maxHeight={200}
                            style={{borderRadius: '90px'}}
                            delay={100}
                            src={cat.url} alt="cat"/>

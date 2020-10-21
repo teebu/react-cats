@@ -5,18 +5,18 @@
     "main.js.map": "./static/js/main.ba5db499.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.031fe643.js",
     "runtime-main.js.map": "./static/js/runtime-main.031fe643.js.map",
-    "static/js/2.41fdf7c4.chunk.js": "./static/js/2.41fdf7c4.chunk.js",
-    "static/js/2.41fdf7c4.chunk.js.map": "./static/js/2.41fdf7c4.chunk.js.map",
+    "static/js/2.cf35cb31.chunk.js": "./static/js/2.cf35cb31.chunk.js",
+    "static/js/2.cf35cb31.chunk.js.map": "./static/js/2.cf35cb31.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.93061f8fa9b4554bd6696088204d666d.js": "./precache-manifest.93061f8fa9b4554bd6696088204d666d.js",
+    "precache-manifest.0bdf51a9ad22d85c3bdfaab807fa9022.js": "./precache-manifest.0bdf51a9ad22d85c3bdfaab807fa9022.js",
     "service-worker.js": "./service-worker.js",
     "static/css/main.b309ffb9.chunk.css.map": "./static/css/main.b309ffb9.chunk.css.map",
-    "static/js/2.41fdf7c4.chunk.js.LICENSE.txt": "./static/js/2.41fdf7c4.chunk.js.LICENSE.txt",
+    "static/js/2.cf35cb31.chunk.js.LICENSE.txt": "./static/js/2.cf35cb31.chunk.js.LICENSE.txt",
     "static/media/404-cat.jpg": "./static/media/404-cat.9183cb90.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.031fe643.js",
-    "static/js/2.41fdf7c4.chunk.js",
+    "static/js/2.cf35cb31.chunk.js",
     "static/css/main.b309ffb9.chunk.css",
     "static/js/main.ba5db499.chunk.js"
   ]

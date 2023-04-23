@@ -6,4 +6,4 @@ Uses https://docs.thecatapi.com/ and https://catfact.ninja for data.
 
 
 
-[Demo](https://teebu.github.io/react-cats)
+Githug: [gh-pages](https://teebu.github.io/react-cats) | Vercel: [https://cats.yuriy.net](https://cats.yuriy.net)

@@ -96,7 +96,12 @@
     padding: 0.75rem 0;
   }
 
+  .favorites-link {
+    display: inline-block;
+  }
+
   .favorites-badge {
-    right: 25%;
+    top: -8px;
+    right: -12px;
   }
 }

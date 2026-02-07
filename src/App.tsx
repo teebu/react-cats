@@ -3,6 +3,7 @@ import './App.css';
 import NotFoundImg from './images/404-cat.jpg';
 import Nav from './helpers/nav';
 import ErrorBoundary from './components/ErrorBoundary';
+import SkipLink from './components/SkipLink';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 // Lazy load page components for code splitting
@@ -43,10 +44,12 @@ function App() {
       <Router basename="/">
         {' '}
         {/*Added basename to handle gh-pages subfolder pathing*/}
+        <SkipLink />
         <div className="App">
           <Nav />
           <ErrorBoundary>
             <Suspense fallback={<LoadingFallback />}>
+              <main id="main-content">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
@@ -57,6 +60,7 @@ function App() {
                 <Route path="/cat/:id" element={<CatDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
+              </main>
             </Suspense>
           </ErrorBoundary>
         </div>

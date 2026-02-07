@@ -44,8 +44,12 @@ function ImageHolder({
   const plainHolder = <div className="placeHolder animate" style={imgStyle} />;
 
   return (
-    <>
-      {isLoading && (placeholder || plainHolder)}
+    <div style={{ position: 'relative', display: 'inline-block' }}>
+      {isLoading && (
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+          {placeholder || plainHolder}
+        </div>
+      )}
       <ProgressiveImage
         src={src}
         alt={alt || ''}
@@ -54,7 +58,7 @@ function ImageHolder({
         delay={delay}
         onLoad={() => setIsLoading(false)}
       />
-    </>
+    </div>
   );
 }
 

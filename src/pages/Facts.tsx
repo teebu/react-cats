@@ -1,18 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import '../App.css';
 import FancyList from '../helpers/FancyList';
 import Skeleton from '../components/Skeleton';
+import SearchBar from '../components/SearchBar';
 import _ from 'lodash';
 
+interface Fact {
+  fact: string;
+}
+
 function Facts() {
-  const [facts, setFacts] = useState([]);
+  const [facts, setFacts] = useState<Fact[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     fetchFacts();
   }, []);
 
-  const cleanUpData = data => _.map(data, e => _.pick(e, ['fact']));
+  const cleanUpData = (data: Fact[]): Fact[] => _.map(data, e => _.pick(e, ['fact']) as Fact);
+
+  const filteredFacts = useMemo(() => {
+    if (!searchQuery) return facts;
+
+    const query = searchQuery.toLowerCase();
+    return facts.filter(fact => fact.fact.toLowerCase().includes(query));
+  }, [facts, searchQuery]);
 
   const fetchFacts = async () => {
     setLoading(true);
@@ -47,7 +60,13 @@ function Facts() {
   return (
     <div>
       <h1>Random Cat Facts</h1>
-      <FancyList data={cleanUpData(facts)} />
+      <SearchBar onSearch={setSearchQuery} placeholder="Search facts..." />
+      {searchQuery && (
+        <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>
+          Found {filteredFacts.length} fact{filteredFacts.length !== 1 ? 's' : ''}
+        </p>
+      )}
+      <FancyList data={cleanUpData(filteredFacts)} />
     </div>
   );
 }

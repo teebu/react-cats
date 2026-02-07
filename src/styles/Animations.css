@@ -1,0 +1,162 @@
+/* Page Transition Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Image Loading Animation */
+@keyframes imageLoad {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Skeleton Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply animations to page content */
+.App main {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.App h1 {
+  animation: slideIn 0.5s ease-out;
+}
+
+img {
+  animation: imageLoad 0.5s ease-out;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Interactive Element Hover Effects */
+button,
+a,
+.clickable {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+button:hover,
+a:hover {
+  transform: translateY(-2px);
+}
+
+button:active,
+a:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.fancy-list li,
+.favorite-item {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stagger animation for lists */
+.fancy-list li {
+  animation: scaleIn 0.4s ease-out backwards;
+}
+
+.fancy-list li:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.fancy-list li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.fancy-list li:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.fancy-list li:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.fancy-list li:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.fancy-list li:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.fancy-list li:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.fancy-list li:nth-child(8) {
+  animation-delay: 0.4s;
+}
+.fancy-list li:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

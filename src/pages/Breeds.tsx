@@ -1,19 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import '../App.css';
 import FancyList from '../helpers/FancyList';
 import Skeleton from '../components/Skeleton';
+import SearchBar from '../components/SearchBar';
 import _ from 'lodash';
 
+interface Breed {
+  breed: string;
+  country: string;
+  pattern: string;
+}
+
 function Breeds() {
-  const [breeds, setBreeds] = useState([]);
+  const [breeds, setBreeds] = useState<Breed[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     fetchBreeds();
   }, []);
 
-  const cleanUpData = data =>
-    _.map(data, e => _.pick(e, ['breed', 'country', 'pattern']));
+  const cleanUpData = (data: Breed[]): Breed[] =>
+    _.map(data, e => _.pick(e, ['breed', 'country', 'pattern']) as Breed);
+
+  const filteredBreeds = useMemo(() => {
+    if (!searchQuery) return breeds;
+
+    const query = searchQuery.toLowerCase();
+    return breeds.filter(
+      breed =>
+        breed.breed.toLowerCase().includes(query) ||
+        breed.country.toLowerCase().includes(query) ||
+        breed.pattern.toLowerCase().includes(query)
+    );
+  }, [breeds, searchQuery]);
 
   const fetchBreeds = async () => {
     setLoading(true);
@@ -46,7 +66,16 @@ function Breeds() {
   return (
     <div>
       <h1>Cat Breeds</h1>
-      <FancyList data={cleanUpData(breeds)} />
+      <SearchBar
+        onSearch={setSearchQuery}
+        placeholder="Search breeds by name, country, or pattern..."
+      />
+      {searchQuery && (
+        <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>
+          Found {filteredBreeds.length} breed{filteredBreeds.length !== 1 ? 's' : ''}
+        </p>
+      )}
+      <FancyList data={cleanUpData(filteredBreeds)} />
     </div>
   );
 }

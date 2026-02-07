@@ -23,7 +23,9 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const [imageSrc, setImageSrc] = useState<string>(placeholder);
+  // Use transparent 1x1 pixel as default to prevent broken image icon
+  const transparentPixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  const [imageSrc, setImageSrc] = useState<string>(placeholder || transparentPixel);
   const imgRef = useRef<HTMLImageElement>(null);
 
   // Intersection Observer to detect when image enters viewport
@@ -94,7 +96,7 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
   return (
     <img
       ref={imgRef}
-      src={imageSrc || placeholder}
+      src={imageSrc}
       alt={alt}
       className={`${className} ${!isLoaded ? 'progressive-loading' : 'progressive-loaded'}`}
       style={{

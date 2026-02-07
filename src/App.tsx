@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from 'react';
+import './styles/Typography.css';
 import './App.css';
 import './styles/Animations.css';
 import NotFoundImg from './images/404-cat.jpg';

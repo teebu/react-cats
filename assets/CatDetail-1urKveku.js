@@ -1,0 +1,2 @@
+import{j as t}from"./index-De7mFyEh.js";import{u as o,d as e}from"./vendor-BoMM30u4.js";import"./lodash-DMtN_g_q.js";function h(){const{id:a}=o(),[s,i]=e.useState({url:null});e.useEffect(()=>{(async()=>{const c=await(await fetch(`https://api.thecatapi.com/v1/images/${a}`)).json();i(c)})()},[a]);const r={maxWidth:"600px",maxHeight:"600px"};return t.jsxs("div",{children:[t.jsx("h1",{children:"Cat Details"}),t.jsx("img",{src:s.url,style:r,alt:""}),t.jsx("div",{children:s.url})]})}export{h as default};
+//# sourceMappingURL=CatDetail-1urKveku.js.map

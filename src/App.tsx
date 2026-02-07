@@ -12,6 +12,7 @@ const Facts = lazy(() => import('./pages/Facts'));
 const Breeds = lazy(() => import('./pages/Breeds'));
 const CatDetail = lazy(() => import('./pages/CatDetail'));
 const Cats = lazy(() => import('./pages/Cats'));
+const Favorites = lazy(() => import('./pages/Favorites'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/cats" element={<Cats size={15} />} />
                 <Route path="/breeds" element={<Breeds />} />
                 <Route path="/facts" element={<Facts />} />
+                <Route path="/favorites" element={<Favorites />} />
                 <Route path="/cat/:id" element={<CatDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

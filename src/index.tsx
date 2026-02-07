@@ -3,11 +3,17 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ThemeProvider } from './context/ThemeContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root')!);
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <FavoritesProvider>
+        <App />
+      </FavoritesProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

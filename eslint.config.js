@@ -3,6 +3,8 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettier from 'eslint-config-prettier';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
@@ -12,27 +14,31 @@ export default [
       '.vite/**',
       'node_modules/**',
       'api/**',
-      'src/serviceWorker.js',
-      'src/setupTests.js',
+      'src/serviceWorker.ts',
+      'src/setupTests.ts',
       'src/__mocks__/**',
       '*.config.js',
+      '*.config.ts',
     ],
   },
   js.configs.recommended,
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     plugins: {
       react,
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
+      '@typescript-eslint': tseslint,
     },
     languageOptions: {
+      parser: tsParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
+        project: './tsconfig.json',
       },
       globals: {
         window: 'readonly',
@@ -67,7 +73,8 @@ export default [
       'jsx-a11y/no-static-element-interactions': 'warn',
 
       // General Rules
-      'no-unused-vars': [
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
         'warn',
         {
           argsIgnorePattern: '^_',
@@ -80,7 +87,7 @@ export default [
     },
   },
   {
-    files: ['**/*.test.js', '**/*.test.jsx'],
+    files: ['**/*.test.js', '**/*.test.jsx', '**/*.test.ts', '**/*.test.tsx'],
     languageOptions: {
       globals: {
         test: 'readonly',

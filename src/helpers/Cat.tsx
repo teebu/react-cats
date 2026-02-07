@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-import ProgressiveImage from 'react-progressive-graceful-image';
 import ImageHolder from '../helpers/ImageHolder';
 import { Link } from 'react-router-dom';
+import FavoriteButton from '../components/FavoriteButton';
+
+interface CatProps {
+  maxWidth?: number;
+  maxHeight?: number;
+  borderRadius?: string;
+  delay?: number;
+}
+
+interface CatData {
+  id?: string;
+  url: string | null;
+  width?: number;
+  height?: number;
+}
 
 function Cat({
   maxWidth = 200,
   maxHeight = 200,
   borderRadius = '90px',
   delay = 100,
-}) {
-  const [catData, setCatData] = useState([{ url: null }]);
+}: CatProps) {
+  const [catData, setCatData] = useState<CatData[]>([{ url: null }]);
 
   const fetchCatData = async () => {
     const res = await fetch(
@@ -43,7 +57,15 @@ function Cat({
   };
 
   return (
-    <div>
+    <div style={{ position: 'relative', display: 'inline-block' }}>
+      {catData[0].id && catData[0].url && (
+        <FavoriteButton
+          catId={catData[0].id}
+          catUrl={catData[0].url}
+          width={catData[0].width}
+          height={catData[0].height}
+        />
+      )}
       <Link to={`/cat/${catData[0].id}`} className="shadowlink">
         <ImageHolder
           style={{
@@ -60,7 +82,7 @@ function Cat({
   );
 }
 
-function Fit(srcWidth, srcHeight, maxWidth, maxHeight) {
+function Fit(srcWidth: number, srcHeight: number, maxWidth: number, maxHeight: number): { width: number; height: number } {
   const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
   return { width: srcWidth * ratio, height: srcHeight * ratio };
 }

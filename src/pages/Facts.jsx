@@ -16,9 +16,6 @@ function Facts() {
     const res = await fetch("https://catfact.ninja/facts?limit=15&max_length=140");
     const res_json = await res.json();
     setFacts(res_json.data);
-    // console.log(res_json.data);
-    // console.log(_.map(res_json.data, e => _.pick(e, ['fact'])));
-    // console.log('facts')
   };
 
 

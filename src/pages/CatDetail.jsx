@@ -7,22 +7,15 @@ import {Link, useParams} from "react-router-dom";
 function CatDetail() {
   const { id } = useParams();
   const [catData, setCatData] = useState({url: null});
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCatData = async () => {
-      // setIsLoading(true);
       const res = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
-      // const res = await fetch("http://aws.random.cat/meow");
       const res_json = await res.json();
-      // setIsLoading(false)
-      console.log(res_json);
-      console.log('catdetails');
       setCatData(res_json);
     };
 
     fetchCatData();
-    console.log('fetchCatData');
   }, [id]);
 
 

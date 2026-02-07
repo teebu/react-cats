@@ -14,17 +14,9 @@ function Breeds() {
 
 
   const fetchBreeds = async () => {
-    /*[{
-      breed: "Abyssinian",
-      country: "Ethiopia",
-      origin: "Natural/Standard",
-      coat: "Short",
-      pattern: "Ticked"
-    },]*/
     const res = await fetch("https://catfact.ninja/breeds?limit=30");
     const res_json = await res.json();
     setBreeds(res_json.data);
-    // console.log(res_json)
   };
 
   return (

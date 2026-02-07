@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import '../App.css';
 import _ from 'lodash';
 
 function FancyList(props) {
-  // console.log(props);
   const data = createChildren(props.data)
-  // console.log(data);
 
   return (
     <ul className="fancy-list">
-      {data.map(item => (
-        <li>{item}</li>
+      {data.map((item, index) => (
+        <li key={index}>{item}</li>
       ))}
     </ul>
   );

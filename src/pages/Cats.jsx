@@ -6,20 +6,16 @@ import {Link} from "react-router-dom";
 import FancyList from "../helpers/FancyList";
 
 function Cats({size = 5}) {
-
   const [catsData, setCatsData] = useState([{url: null}]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCatData = async () => {
       const res = await fetch(`https://api.thecatapi.com/v1/images/search?limit=${size}&order=random&size=small`);
       const res_json = await res.json();
       setCatsData(res_json);
-      console.log(res_json);
     };
 
     fetchCatData();
-    console.log('fetchCatData')
   }, [size]);
 
   return (

@@ -6,24 +6,17 @@ import {Link} from "react-router-dom";
 
 function Cat({maxWidth = 200, maxHeight = 200, borderRadius = '90px', delay = 100}) {
 
-  useEffect(() => {
-    fetchCatData();
-    console.log('fetchCatData')
-  }, []);
-
   const [catData, setCatData] = useState([{url: null}]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const fetchCatData = async () => {
-    // setIsLoading(true);
     const res = await fetch("https://api.thecatapi.com/v1/images/search?limit=1&order=random&size=medium&");
-    // const res = await fetch("http://aws.random.cat/meow");
     const res_json = await res.json();
     setCatData(res_json);
-    // setIsLoading(false)
-    // console.log(res_json);
-    console.log('cat image set')
   };
+
+  useEffect(() => {
+    fetchCatData();
+  }, []);
 
   let imgStyle = {
     width: Fit(catData[0].width || maxWidth, catData[0].height, maxWidth, maxHeight).width,

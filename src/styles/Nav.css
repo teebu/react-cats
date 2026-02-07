@@ -82,7 +82,15 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background: var(--nav-bg);
+    background: rgba(41, 57, 83, 0.95);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="dark"] .nav-links {
+    background: rgba(15, 20, 25, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .nav-links-open {

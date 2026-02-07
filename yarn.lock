@@ -372,11 +372,6 @@
   "resolved" "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.29.tgz"
   "version" "1.0.0-next.29"
 
-"@researchgate/react-intersection-observer@^1.0.5":
-  "integrity" "sha512-aYlsex5Dd6BAHMJvJrUoFp8gzgMSL27xFvrxkVYW0bV1RMAapVsO+QeYLtTaSF/QCflktODodvv+wJm49oMnnQ=="
-  "resolved" "https://registry.npmjs.org/@researchgate/react-intersection-observer/-/react-intersection-observer-1.3.5.tgz"
-  "version" "1.3.5"
-
 "@rolldown/pluginutils@1.0.0-rc.2":
   "integrity" "sha512-izyXV/v+cHiRfozX62W9htOAvwMo4/bXKDrQ+vom1L1qRuexPock/7VZDAhnpHCLNejd3NJ6hiab+tO0D44Rgw=="
   "resolved" "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.2.tgz"
@@ -2381,13 +2376,6 @@
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
-
-"react-progressive-graceful-image@^0.6.14":
-  "integrity" "sha512-KzWJVB8JTygKVEi+z9NEeN+UUnUjnsk6ESq+M+VtDOa/ODey7Fun1GgM6WCR97kjcP94cpPjK1BwPWcLdwG+6A=="
-  "resolved" "https://registry.npmjs.org/react-progressive-graceful-image/-/react-progressive-graceful-image-0.6.14.tgz"
-  "version" "0.6.14"
-  dependencies:
-    "@researchgate/react-intersection-observer" "^1.0.5"
 
 "react-refresh@^0.18.0":
   "integrity" "sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw=="

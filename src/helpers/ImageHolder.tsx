@@ -1,8 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
-import ProgressiveImage from 'react-progressive-graceful-image';
+import ProgressiveImage from '../components/ProgressiveImage';
 import './utils';
 import { removeEmpty } from './utils';
+
+interface ImageHolderProps {
+  src: string;
+  width?: number;
+  height?: number;
+  maxWidth?: number;
+  maxHeight?: number;
+  style?: React.CSSProperties;
+  className?: string;
+  alt?: string;
+  delay?: number;
+  placeholder?: React.ReactNode;
+}
 
 function ImageHolder({
   src,
@@ -15,7 +28,9 @@ function ImageHolder({
   alt,
   delay,
   placeholder,
-}) {
+}: ImageHolderProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
   let imgStyle = {
     width: Fit(width, height, maxWidth, maxHeight).width,
     height: Fit(width, height, maxWidth, maxHeight).height,
@@ -30,16 +45,15 @@ function ImageHolder({
 
   return (
     <>
-      {placeholder}
-      <ProgressiveImage delay={delay} src={src} placeholder="">
-        {(src, loading) => {
-          return loading ? (
-            placeholder || plainHolder
-          ) : (
-            <img src={src} alt={alt} className={className} style={imgStyle} />
-          );
-        }}
-      </ProgressiveImage>
+      {isLoading && (placeholder || plainHolder)}
+      <ProgressiveImage
+        src={src}
+        alt={alt || ''}
+        className={className}
+        style={imgStyle}
+        delay={delay}
+        onLoad={() => setIsLoading(false)}
+      />
     </>
   );
 }

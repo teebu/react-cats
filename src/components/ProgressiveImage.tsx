@@ -100,7 +100,8 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
       style={{
         ...style,
         transition: 'opacity 0.3s ease-in-out',
-        opacity: isLoaded ? 1 : 0.5,
+        opacity: isLoaded ? 1 : 0,
+        visibility: isLoaded ? 'visible' : 'hidden',
       }}
     />
   );

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import '../App.css';
-import ProgressiveImage from 'react-progressive-graceful-image';
 import ImageHolder from '../helpers/ImageHolder';
 import { Link } from 'react-router-dom';
 import FancyList from '../helpers/FancyList';
@@ -21,7 +20,7 @@ interface CatsProps {
 
 function Cats({ size = 15 }: CatsProps) {
   const [catsData, setCatsData] = useState<CatData[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 

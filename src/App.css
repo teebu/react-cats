@@ -19,6 +19,24 @@
   padding: 1rem 0;
   background: var(--nav-bg);
   color: var(--nav-text);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-scrolled {
+  background: rgba(41, 57, 83, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark theme glassmorphism */
+[data-theme="dark"] .nav-scrolled {
+  background: rgba(15, 20, 25, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav a {

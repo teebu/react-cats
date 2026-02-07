@@ -5,10 +5,12 @@ import '../styles/Nav.css';
 import ImageHolder from './ImageHolder';
 import ThemeToggle from '../components/ThemeToggle';
 import { useFavorites } from '../context/FavoritesContext';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 function Nav() {
   const { favoritesCount } = useFavorites();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrolled = useScrollPosition();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,7 +21,7 @@ function Nav() {
   };
 
   return (
-    <nav className="nav">
+    <nav className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
       <h3>
         <Link to="/" onClick={closeMenu}>
           <ImageHolder

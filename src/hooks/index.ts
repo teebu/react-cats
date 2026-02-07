@@ -3,4 +3,5 @@ export { useLocalStorage } from './useLocalStorage';
 export { useInterval } from './useInterval';
 export { useCatApi, useCatBreeds } from './useCatApi';
 export { useInfiniteScroll } from './useInfiniteScroll';
+export { useScrollPosition } from './useScrollPosition';
 export type { CatImage, CatBreed } from './useCatApi';

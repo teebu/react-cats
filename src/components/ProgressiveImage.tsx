@@ -103,7 +103,7 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
         ...style,
         transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
         opacity: isLoaded ? 1 : 0,
-        display: isLoaded ? 'block' : 'none',
+        pointerEvents: isLoaded ? 'auto' : 'none',
       }}
     />
   );

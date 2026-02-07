@@ -7,7 +7,7 @@ global.IntersectionObserver = class IntersectionObserver {
 
   disconnect() {
     return null;
-  };
+  }
 
   unobserve() {
     return null;

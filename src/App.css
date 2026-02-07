@@ -1,154 +1,158 @@
-*{
- box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .header-logo {
-    max-width: 70px;
-    border-radius: 30px;
+  max-width: 70px;
+  border-radius: 30px;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 10vh;
-    background: #293953;
-    color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: #293953;
+  color: white;
 }
 
 .nav a {
-    color: white;
+  color: white;
 }
 
 .nav-links {
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }
 
 .fancy-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    grid-auto-rows: minmax(100px, auto);
-    padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 10px;
 }
 
 .fancy-list li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 10px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
 }
 
 .fancy-list li:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transform: scale(1.2, 1.2);
-    background: white;
-    cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.2, 1.2);
+  background: white;
+  cursor: pointer;
 }
 
-.fancy-list li:hover { transform-origin: top; }
-.fancy-list li:hover:nth-child(3n+0) { transform-origin: top right; }
-.fancy-list li:hover:nth-child(3n+1) { transform-origin: top left; }
-
+.fancy-list li:hover {
+  transform-origin: top;
+}
+.fancy-list li:hover:nth-child(3n + 0) {
+  transform-origin: top right;
+}
+.fancy-list li:hover:nth-child(3n + 1) {
+  transform-origin: top left;
+}
 
 .fancy-img-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    grid-auto-rows: minmax(100px, auto);
-    padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 10px;
 }
 
 .fancy-img-list li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 10px;
 }
 
 .shadowlink img {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
 }
 
 .shadowlink img:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transform: scale(1.1, 1.1);
-    background: white;
-    cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1, 1.1);
+  background: white;
+  cursor: pointer;
 }
 
 .intro {
-    text-align: left;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*Shimmering effect*/
 .placeHolder {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .br {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 .w80 {
-    width: 40%;
+  width: 40%;
 }
 .card {
-    border: 2px solid #fff;
-    box-shadow:0px 0px 10px 0 #a9a9a9;
-    padding: 30px 40px;
-    width: 40%;
-    margin: 0px auto;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 10px 0 #a9a9a9;
+  padding: 30px 40px;
+  width: 40%;
+  margin: 0px auto;
 }
 .wrapper {
-    width: 0px;
-    animation: fullView 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  width: 0px;
+  animation: fullView 0.5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .profilePic {
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
 }
 .comment {
-    height: 10px;
-    background: #777;
-    margin-top: 20px;
+  height: 10px;
+  background: #777;
+  margin-top: 20px;
 }
 
 @keyframes fullView {
-    100% {
-        width: 100%;
-    }
+  100% {
+    width: 100%;
+  }
 }
 
-
 .animate {
-    animation : shimmer 2s infinite linear;
-    background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
-    background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+  background-size: 1000px 100%;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
 }

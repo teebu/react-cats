@@ -3,7 +3,7 @@ import '../App.css';
 import _ from 'lodash';
 
 function FancyList(props) {
-  const data = createChildren(props.data)
+  const data = createChildren(props.data);
 
   return (
     <ul className="fancy-list">
@@ -19,7 +19,7 @@ function createChildren(data) {
   return _.map(data, obj => {
     const children = [];
     _.forOwn(obj, function (value, key) {
-      if (value) children.push(<div>{`${key}: ${value}`}</div>)
+      if (value) children.push(<div>{`${key}: ${value}`}</div>);
     });
     return children;
   });

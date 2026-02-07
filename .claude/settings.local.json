@@ -34,7 +34,8 @@
       "Bash(git rm:*)",
       "Bash(vercel --version:*)",
       "Bash(vercel whoami:*)",
-      "Bash(vercel login)"
+      "Bash(vercel login)",
+      "Bash(git config:*)"
     ]
   }
 }

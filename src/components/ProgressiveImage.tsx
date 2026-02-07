@@ -28,13 +28,15 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
 
   // Intersection Observer to detect when image enters viewport
   useEffect(() => {
-    if (!imgRef.current) return;
+    const currentImg = imgRef.current;
+    if (!currentImg) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsInView(true);
+            observer.disconnect(); // Disconnect after first intersection
           }
         });
       },
@@ -44,12 +46,10 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
       }
     );
 
-    observer.observe(imgRef.current);
+    observer.observe(currentImg);
 
     return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
+      observer.disconnect();
     };
   }, []);
 

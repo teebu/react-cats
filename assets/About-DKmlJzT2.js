@@ -1,0 +1,2 @@
+import{j as t}from"./index-COAepsnV.js";import{C as r}from"./Cat-DBqrq4no.js";import"./vendor-fvY37QqL.js";import"./lodash-BQhbuEWg.js";import"./FavoriteButton-BX_g1ig-.js";function n(){return t.jsxs("div",{children:[t.jsx("h1",{children:"About"}),t.jsx("div",{children:t.jsx(r,{})}),t.jsx("div",{className:"intro",children:"A simple project to play around with React, React Routes and CSS."})]})}export{n as default};
+//# sourceMappingURL=About-DKmlJzT2.js.map

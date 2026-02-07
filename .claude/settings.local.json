@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo:*)",
+      "Bash(test:*)",
+      "Bash(bd init:*)",
+      "Bash(bd stats:*)",
+      "Bash(bd ready:*)",
+      "Bash(bd list:*)",
+      "Bash(bd create:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checkout:*)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git stash:*)",
+      "Bash(git pull:*)",
+      "Bash(gh pr comment:*)",
+      "Bash(npm audit:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(npm install)",
+      "Bash(gh pr close:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(timeout 10 npm start:*)"
+    ]
+  }
+}

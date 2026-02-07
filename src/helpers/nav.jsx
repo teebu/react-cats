@@ -11,7 +11,7 @@ function Nav() {
         <Link to="/">
           <ImageHolder style={{width: 70, height: 63, borderRadius: '30px', display: 'inline-block'}}
                        className='header-logo' delay={1000}
-                       src={process.env.PUBLIC_URL + '/cat_logo.png'} alt="cat"/>
+                       src="/cat_logo.png" alt="cat"/>
         </Link>
       </h3>
       <ul className="nav-links">

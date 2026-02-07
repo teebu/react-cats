@@ -99,7 +99,7 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
       className={`${className} ${!isLoaded ? 'progressive-loading' : 'progressive-loaded'}`}
       style={{
         ...style,
-        transition: 'opacity 0.3s ease-in-out',
+        transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
         opacity: isLoaded ? 1 : 0,
         visibility: isLoaded ? 'visible' : 'hidden',
       }}

@@ -1,0 +1,2 @@
+import{j as t}from"./index-DeI9BQ-c.js";import{C as r}from"./Cat-8mxqBbh-.js";import"./vendor-fvY37QqL.js";import"./lodash-BQhbuEWg.js";import"./FavoriteButton-Biyv6pv8.js";function n(){return t.jsxs("div",{children:[t.jsx("h1",{children:"About"}),t.jsx("div",{children:t.jsx(r,{})}),t.jsx("div",{className:"intro",children:"A simple project to play around with React, React Routes and CSS."})]})}export{n as default};
+//# sourceMappingURL=About-Cy6gxsU6.js.map

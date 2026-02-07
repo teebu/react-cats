@@ -2,17 +2,17 @@ import React, {useEffect, useState} from 'react';
 import '../App.css';
 import ProgressiveImage from "react-progressive-graceful-image";
 import ImageHolder from "../helpers/ImageHolder";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
-function CatDetail({match}) {
-
+function CatDetail() {
+  const { id } = useParams();
   const [catData, setCatData] = useState({url: null});
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCatData = async () => {
       // setIsLoading(true);
-      const res = await fetch(`https://api.thecatapi.com/v1/images/${match.params.id}`);
+      const res = await fetch(`https://api.thecatapi.com/v1/images/${id}`);
       // const res = await fetch("http://aws.random.cat/meow");
       const res_json = await res.json();
       // setIsLoading(false)
@@ -23,7 +23,7 @@ function CatDetail({match}) {
 
     fetchCatData();
     console.log('fetchCatData');
-  }, [match]);
+  }, [id]);
 
 
 

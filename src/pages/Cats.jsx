@@ -12,8 +12,7 @@ function Cats({size = 5}) {
 
   useEffect(() => {
     const fetchCatData = async () => {
-      const headers = {'x-api-key': '61ca5f8e-9e7a-4469-a560-d88fe48a9eb6'};
-      const res = await fetch(`https://api.thecatapi.com/v1/images/search?limit=${size}&order=random&size=small`, {headers});
+      const res = await fetch(`https://api.thecatapi.com/v1/images/search?limit=${size}&order=random&size=small`);
       const res_json = await res.json();
       setCatsData(res_json);
       console.log(res_json);

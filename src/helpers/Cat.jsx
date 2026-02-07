@@ -16,8 +16,7 @@ function Cat({maxWidth = 200, maxHeight = 200, borderRadius = '90px', delay = 10
 
   const fetchCatData = async () => {
     // setIsLoading(true);
-    const headers = {'x-api-key': '61ca5f8e-9e7a-4469-a560-d88fe48a9eb6'};
-    const res = await fetch("https://api.thecatapi.com/v1/images/search?limit=1&order=random&size=medium&", {headers});
+    const res = await fetch("https://api.thecatapi.com/v1/images/search?limit=1&order=random&size=medium&");
     // const res = await fetch("http://aws.random.cat/meow");
     const res_json = await res.json();
     setCatData(res_json);

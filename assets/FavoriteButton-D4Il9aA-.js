@@ -1,2 +1,0 @@
-import{u as l,j as m}from"./index-CMdwG-X2.js";const c=({catId:t,catUrl:r,width:a,height:i})=>{const{isFavorite:s,addFavorite:v,removeFavorite:n}=l(),o=s(t),f=e=>{e.preventDefault(),e.stopPropagation(),o?n(t):v({id:t,url:r,width:a,height:i})};return m.jsx("button",{className:`favorite-button ${o?"favorite-active":""}`,onClick:f,"aria-label":o?"Remove from favorites":"Add to favorites",title:o?"Remove from favorites":"Add to favorites",children:o?"❤️":"🤍"})};export{c as F};
-//# sourceMappingURL=FavoriteButton-D4Il9aA-.js.map

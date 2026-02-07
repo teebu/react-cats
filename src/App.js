@@ -8,22 +8,22 @@ import Facts from "./pages/Facts";
 import Breeds from "./pages/Breeds";
 import CatDetail from "./pages/CatDetail";
 import Cats from "./pages/Cats";
-import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {HashRouter as Router, Route, Routes, Link} from 'react-router-dom'
 
 function App() {
   return (
     <Router basename='/'> {/*Added basename to handle gh-pages subfolder pathing*/}
       <div className="App">
         <Nav/>
-        <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/about" exact component={About}/>
-          <Route path="/cats" exact><Cats size={15}/></Route>
-          <Route path="/breeds" component={Breeds}/>
-          <Route path="/facts" component={Facts}/>
-          <Route path="/cat/:id" exact component={CatDetail}/>
-          <Route component={NotFound}/>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/cats" element={<Cats size={15}/>}/>
+          <Route path="/breeds" element={<Breeds/>}/>
+          <Route path="/facts" element={<Facts/>}/>
+          <Route path="/cat/:id" element={<CatDetail/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
       </div>
     </Router>
   );

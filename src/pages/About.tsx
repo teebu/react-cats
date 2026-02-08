@@ -1,4 +1,3 @@
-import React from 'react';
 import Cat from '../helpers/Cat';
 import '../styles/About.css';
 

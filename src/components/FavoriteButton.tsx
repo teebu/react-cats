@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent } from 'react';
 import { useFavorites } from '../context/FavoritesContext';
 import '../styles/FavoriteButton.css';
 
@@ -9,11 +9,11 @@ interface FavoriteButtonProps {
   height?: number;
 }
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({ catId, catUrl, width, height }) => {
+const FavoriteButton = ({ catId, catUrl, width, height }: FavoriteButtonProps) => {
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const favorite = isFavorite(catId);
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
 

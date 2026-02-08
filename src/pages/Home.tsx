@@ -1,5 +1,4 @@
 import Cat from '../helpers/Cat';
-import React from 'react';
 import Interval from 'react-interval-rerender';
 import '../styles/Home.css';
 

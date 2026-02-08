@@ -1,4 +1,3 @@
-import React from 'react';
 import '../App.css';
 import '../styles/FancyList.css';
 import _ from 'lodash';

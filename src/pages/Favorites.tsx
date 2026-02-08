@@ -1,10 +1,9 @@
-import React from 'react';
 import { useFavorites } from '../context/FavoritesContext';
 import { Link } from 'react-router-dom';
 import FavoriteButton from '../components/FavoriteButton';
 import '../styles/Favorites.css';
 
-const Favorites: React.FC = () => {
+const Favorites = () => {
   const { favorites } = useFavorites();
 
   if (favorites.length === 0) {

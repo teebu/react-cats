@@ -4,7 +4,8 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?logo=github)](https://teebu.github.io/react-cats)
 [![Vercel](https://img.shields.io/badge/Vercel-Live-success?logo=vercel)](https://cats.yuriy.net)
-[![React](https://img.shields.io/badge/React-18.3-blue?logo=react)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-19.0-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?logo=vite)](https://vite.dev/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -16,26 +17,50 @@
 
 ## ✨ Features
 
-- 🖼️ **Cat Image Gallery** - Browse beautiful random cat images with progressive loading for smooth UX
+### Core Features
+- 🖼️ **Cat Image Gallery** - Browse beautiful random cat images with infinite scroll
 - 🔄 **Auto-Refreshing Carousel** - Home page automatically refreshes with new cats every 15 seconds
 - 🐱 **Breed Explorer** - Discover 30+ cat breeds with detailed information including origin and patterns
 - 💡 **Cat Facts** - Learn interesting tidbits about cats (bite-sized at 140 characters max)
-- 🎨 **Clean, Responsive UI** - Works beautifully on desktop and mobile devices
-- ⚡ **Lightning-Fast Performance** - Powered by Vite for instant hot module replacement
+- ❤️ **Favorites System** - Save your favorite cat images with localStorage persistence
+- 🔍 **Search & Filter** - Search through breeds and facts with real-time filtering
+
+### UI/UX Enhancements
+- 🎨 **Dark/Light Theme** - Toggle between themes with smooth transitions and localStorage persistence
+- 🌊 **Glassmorphism Design** - Modern floating navigation with frosted glass effect on scroll
+- 📱 **Fully Responsive** - Mobile-optimized with hamburger menu and touch-friendly interactions
+- 🖼️ **Progressive Image Loading** - Custom implementation with Intersection Observer for optimal performance
+- ⚡ **Lightning-Fast Performance** - React 19 with Vite for instant hot module replacement
+- 🎯 **Smooth Animations** - Hover effects, transitions, and loading states
+- ♿ **Accessibility** - ARIA labels, skip links, and keyboard navigation support
+
+### Technical Features
+- 🔄 **Infinite Scroll** - Automatic loading of more images as you scroll
+- 📤 **Web Share API** - Share cat images with native share functionality (clipboard fallback)
 - 🧭 **Smooth Navigation** - Seamless routing with React Router v7
+- 💾 **LocalStorage Integration** - Persistent favorites and theme preferences
+- 🎨 **CSS Variables** - Dynamic theming with CSS custom properties
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Core Framework
-- **React 18.3** - Modern React with hooks and concurrent features
+- **React 19.0** - Latest React with enhanced performance and new features
+- **TypeScript 5.7** - Full type safety throughout the application
 - **React Router v7** - Latest routing with enhanced data loading
 - **Vite 7.3** - Next-generation frontend tooling for blazing fast builds
 
-### UI/UX Libraries
-- **react-progressive-graceful-image** - Progressive image loading with placeholders
-- **react-interval-rerender** - Automatic component re-rendering on intervals
+### Development & Quality
+- **ESLint 10** - Modern linting with strict rules
+- **Prettier** - Consistent code formatting
+- **Vitest** - Modern testing framework
+- **GitHub Actions** - Automated CI/CD pipeline
+
+### UI/UX
+- **Custom Progressive Image Component** - Built with Intersection Observer API (no deprecated APIs)
+- **CSS Variables** - Dynamic theming system
+- **Glassmorphism Effects** - Modern backdrop-filter for frosted glass UI
 - **Lodash** - Utility functions for elegant data transformation
 
 ### APIs
@@ -92,24 +117,30 @@
 ```
 react-cats/
 ├── src/
-│   ├── pages/           # Route components (Home, Cats, Breeds, Facts, About)
-│   ├── components/      # Reusable UI components (ImageHolder, FancyList, etc.)
+│   ├── pages/           # Route componeats, Breeds, Facts, About, Favorites)
+│   ├── components/      # Reusable UI components (ProgressiveImage, ThemeToggle, etc.)
+│   ├── context/         # React Context providers (FavoritesContext, ThemeContext)
+│   ├── hooks/           # Custom React hooks (useCatApi, useInfiniteScroll, etc.)
+│   ├── helpers/         # Utility components (ImageHolder, Nav, Cat, etc.)
+│   ├── styles/          # CSS modules and stylesheets
 │   ├── images/          # Static images and assets
-│   ├── index.css        # Global styles
-│   └── index.jsx        # Application entry point
-├── public/              # Static assets (favicon, logo, etc.)
+│   ├── index.css        # Global styles and CSS variables
+│   └── index.tsx        # Application entry point (TypeScript)
+├── public/              # Static assets (favicon, logo, cat_logo.png)
 ├── build/               # Production build output
-└── vite.config.js       # Vite configuration
+├── .beads/              # Issue tracking with beads
+└── vite.config.ts       # Vite configuration (TypeScript)
 ```
 
 ### Key Pages
 
-- **Home (`/`)** - Auto-refreshing cat image carousel
-- **Cats (`/cats`)** - Grid of 15 random cat images
-- **Cat Detail (`/cat/:id`)** - Individual cat image view
-- **Breeds (`/breeds`)** - Catalog of 30 cat breeds
-- **Facts (`/facts`)** - Collection of 15 random cat facts
-- **About (`/about`)** - Project information
+- **Home (`/`)** - Auto-refreshing cat image carousel with smooth animations
+- **Cats (`/cats`)** - Infinite scroll gallery with progressive image loading
+- **Cat Detail (`/cat/:id`)** - Individual cat image view with share functionality
+- **Breeds (`/breeds`)** - Searchable catalog of 30+ cat breeds
+- **Facts (`/facts`)** - Searchable collection of interesting cat facts
+- **Favorites (`/favorites`)** - Your saved favorite cat images
+- **About (`/about`)** - Comprehensive project information and tech stack
 
 ---
 
@@ -168,12 +199,47 @@ The project uses Vite for building:
 
 ## 🎯 Technical Highlights
 
-- **Migration Success**: Successfully migrated from Create React App to Vite, eliminating all security vulnerabilities and improving build performance
-- **Modern React Patterns**: Uses hooks, functional components, and React 18 features throughout
-- **Progressive Enhancement**: Images load progressively with graceful fallbacks
-- **Custom Utilities**: Hand-crafted aspect ratio calculations for optimal image display
-- **HashRouter**: Uses hash-based routing for GitHub Pages compatibility
+### Architecture & Performance
+- **React 19 Upgrade**: Successfully upgraded to React 19 with enhanced performance and new features
+- **TypeScript Migration**: Full TypeScript coverage for type safety and better developer experience
+- **Custom Hooks**: Reusable logic with `useCatApi`, `useInfiniteScroll`, `useScrollPosition`, `useLocalStorage`
+- **Context API**: Global state management for favorites and theme without external dependencies
+- **Progressive Enhancement**: Custom progressive image component using Intersection Observer (no deprecated APIs)
+- **Optimized Builds**: Vite with code splitting, tree-shaking, and bundle analysis
+
+### UI/UX Excellence
+- **Glassmorphism**: Modern frosted glass effect on floating navigation using `backdrop-filter`
+- **Dark Mode**: Complete dark theme support with CSS variables and smooth transitions
+- **Responsive Design**: Mobile-first approach with hamburger menu and touch-friendly interactions
+- **Accessibility**: ARIA labels, keyboard navigation, skip links, and semantic HTML
+- **Smooth Animations**: CSS transitions for hover effects, loading states, and page transitions
+
+### Code Quality
 - **Zero Vulnerabilities**: No known security issues in dependencies
+- **Modern React Patterns**: Hooks, functional components, and React 19 features throughout
+- **HashRouter**: Uses hash-based routing for GitHub Pages compatibility
+- **Issue Tracking**: Integrated beads for multi-session development and persistent memory
+
+---
+
+## 🔧 Custom Hooks & Components
+
+### Custom Hooks
+- **`useCatApi`** - Fetch random cat images from The Cat API
+- **`useCatBreeds`** - Load and manage cat breed data
+- **`useInfiniteScroll`** - Implement infinite scrolling functionality
+- **`useScrollPosition`** - Track scroll position for floating header effect
+- **`useLocalStorage`** - Persist data to localStorage with React state sync
+- **`useFetch`** - Generic fetch hook with loading and error states
+- **`useInterval`** - Declarative interval hook for auto-refresh
+
+### Custom Components
+- **`ProgressiveImage`** - Lazy loading images with Intersection Observer
+- **`ThemeToggle`** - Dark/light mode switcher with sun/moon icons
+- **`FavoriteButton`** - Heart icon button for favoriting images
+- **`SearchBar`** - Reusable search input with debouncing
+- **`ErrorBoundary`** - Graceful error handling for React components
+- **`Skeleton`** - Loading placeholder components
 
 ---
 

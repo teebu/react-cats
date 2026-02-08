@@ -38,8 +38,5 @@
       "Bash(npm publish *)"
     ],
     "defaultMode": "acceptEdits"
-  },
-  "enabledPlugins": {
-    "vercel@claude-plugins-official": true
   }
 }

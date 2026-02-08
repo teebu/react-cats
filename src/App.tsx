@@ -6,6 +6,7 @@ import NotFoundImg from './images/404-cat.jpg';
 import Nav from './helpers/nav';
 import ErrorBoundary from './components/ErrorBoundary';
 import SkipLink from './components/SkipLink';
+import ScrollToTop from './components/ScrollToTop';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 // Lazy load page components for code splitting
@@ -46,6 +47,7 @@ function App() {
       <Router basename="/">
         {' '}
         {/*Added basename to handle gh-pages subfolder pathing*/}
+        <ScrollToTop />
         <SkipLink />
         <div className="App">
           <Nav />

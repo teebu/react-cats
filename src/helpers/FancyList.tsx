@@ -1,31 +1,38 @@
 import React from 'react';
 import '../App.css';
+import '../styles/FancyList.css';
 import _ from 'lodash';
 
 interface FancyListProps {
   data: Record<string, unknown>[];
+  type?: 'breeds' | 'facts';
 }
 
-function FancyList({ data }: FancyListProps) {
+function FancyList({ data, type = 'breeds' }: FancyListProps) {
   const items = createChildren(data);
 
   return (
-    <ul className="fancy-list">
+    <div className={`brutalist-list ${type}-list`}>
       {items.map((item, index) => (
-        <li key={`item-${index}`}>{item}</li>
+        <div key={`item-${index}`} className="list-card">
+          <div className="card-index">{String(index + 1).padStart(2, '0')}</div>
+          <div className="card-content">{item}</div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 
 function createChildren(data: Record<string, unknown>[]) {
-  // takes an array of objects and returns an array of jsx components
   return _.map(data, (obj, objIndex) => {
     const children: JSX.Element[] = [];
     _.forOwn(obj, function (value, key) {
       if (value) {
         children.push(
-          <div key={`${objIndex}-${key}`}>{`${key}: ${value}`}</div>
+          <div key={`${objIndex}-${key}`} className="data-row">
+            <span className="data-label">{key}</span>
+            <span className="data-value">{String(value)}</span>
+          </div>
         );
       }
     });

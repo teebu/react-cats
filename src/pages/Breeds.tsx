@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import '../App.css';
+import '../styles/DataPage.css';
 import FancyList from '../helpers/FancyList';
 import Skeleton from '../components/Skeleton';
 import SearchBar from '../components/SearchBar';
@@ -51,11 +52,11 @@ function Breeds() {
   if (loading) {
     return (
       <div style={{ padding: '2rem' }}>
-        <Skeleton height="40px" width="200px" borderRadius="8px" />
+        <Skeleton height="40px" width="200px" borderRadius="0px" />
         <div style={{ marginTop: '1rem' }}>
           {Array.from({ length: 10 }).map((_, i) => (
             <div key={i} style={{ marginBottom: '0.5rem' }}>
-              <Skeleton height="60px" borderRadius="8px" />
+              <Skeleton height="60px" borderRadius="0px" />
             </div>
           ))}
         </div>
@@ -64,18 +65,27 @@ function Breeds() {
   }
 
   return (
-    <div>
-      <h1>Cat Breeds</h1>
-      <SearchBar
-        onSearch={setSearchQuery}
-        placeholder="Search breeds by name, country, or pattern..."
-      />
-      {searchQuery && (
-        <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>
-          Found {filteredBreeds.length} breed{filteredBreeds.length !== 1 ? 's' : ''}
-        </p>
-      )}
-      <FancyList data={cleanUpData(filteredBreeds)} />
+    <div className="data-page breeds-page">
+      <div className="page-header-full">
+        <div className="header-stripe"></div>
+        <h1 className="page-title-full">
+          <span className="title-prefix">DATABASE //</span>
+          CAT BREEDS
+        </h1>
+        <div className="search-wrapper">
+          <SearchBar
+            onSearch={setSearchQuery}
+            placeholder="SEARCH: BREED / COUNTRY / PATTERN"
+          />
+        </div>
+        {searchQuery && (
+          <div className="results-count">
+            <span className="count-number">{filteredBreeds.length}</span>
+            <span className="count-text">RESULTS FOUND</span>
+          </div>
+        )}
+      </div>
+      <FancyList data={cleanUpData(filteredBreeds)} type="breeds" />
     </div>
   );
 }

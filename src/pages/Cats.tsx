@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import '../App.css';
+import '../styles/Cats.css';
 import ImageHolder from '../helpers/ImageHolder';
 import { Link } from 'react-router-dom';
-import FancyList from '../helpers/FancyList';
 import ImageGridSkeleton from '../components/ImageGridSkeleton';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 import FavoriteButton from '../components/FavoriteButton';
@@ -58,26 +58,38 @@ function Cats({ size = 15 }: CatsProps) {
   });
 
   return (
-    <div>
-      <h1>Explore Cats</h1>
+    <div className="cats-page">
+      <div className="page-header">
+        <div className="header-decoration"></div>
+        <h1 className="page-title">
+          <span className="title-index">CATALOG</span>
+          EXPLORE CATS
+        </h1>
+        <div className="header-count">
+          {catsData.length} <span className="count-label">LOADED</span>
+        </div>
+      </div>
+
       {catsData.length === 0 && loading ? (
         <ImageGridSkeleton count={size} />
       ) : (
         <>
-          <ul className="fancy-img-list shadowlink">
+          <div className="brutalist-grid">
             {catsData.map((cat, index) => (
-              <li key={`${cat.id}-${index}`} style={{ borderRadius: '120px', position: 'relative' }}>
-                <Link to={`/cat/${cat.id}`}>
+              <div key={`${cat.id}-${index}`} className="grid-item">
+                <div className="item-number">{String(index + 1).padStart(3, '0')}</div>
+                <Link to={`/cat/${cat.id}`} className="image-wrapper">
                   <ImageHolder
                     width={cat.width}
                     height={cat.height}
-                    maxWidth={200}
-                    maxHeight={200}
-                    style={{ borderRadius: '90px' }}
+                    maxWidth={400}
+                    maxHeight={400}
+                    style={{ borderRadius: '0' }}
                     delay={100}
                     src={cat.url}
-                    alt="cat"
+                    alt={`Cat ${index + 1}`}
                   />
+                  <div className="image-overlay">VIEW</div>
                 </Link>
                 <FavoriteButton
                   catId={cat.id}
@@ -85,35 +97,24 @@ function Cats({ size = 15 }: CatsProps) {
                   width={cat.width}
                   height={cat.height}
                 />
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
 
-          {/* Infinite scroll trigger */}
           <div ref={loadMoreRef} style={{ height: '20px', margin: '2rem 0' }} />
 
-          {/* Loading indicator */}
           {loading && (
-            <div style={{ textAlign: 'center', padding: '2rem' }}>
-              <div
-                style={{
-                  fontSize: '3rem',
-                  animation: 'spin 1s linear infinite',
-                }}
-              >
-                🐱
-              </div>
-              <p style={{ marginTop: '1rem', color: 'var(--text-secondary)' }}>
-                Loading more cats...
-              </p>
+            <div className="loading-state">
+              <div className="loading-bar"></div>
+              <p className="loading-text">LOADING MORE CATS...</p>
             </div>
           )}
 
-          {/* End of results */}
           {!hasMore && catsData.length > 0 && (
-            <p style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)' }}>
-              You've seen all the cats! 😺
-            </p>
+            <div className="end-state">
+              <div className="end-marker">///</div>
+              <p>END OF CATALOG</p>
+            </div>
           )}
         </>
       )}

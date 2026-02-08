@@ -50,7 +50,7 @@ function Nav() {
       </button>
       <ul className={`nav-links ${isMenuOpen ? 'nav-links-open' : ''}`}>
         <li>
-          <Link to="/about" onClick={closeMenu}>About</Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
         </li>
         <li>
           <Link to="/cats" onClick={closeMenu}>Cats</Link>
@@ -68,6 +68,9 @@ function Nav() {
               <span className="favorites-badge">{favoritesCount}</span>
             )}
           </Link>
+        </li>
+        <li>
+          <Link to="/about" onClick={closeMenu}>About</Link>
         </li>
       </ul>
       <div className="nav-actions">

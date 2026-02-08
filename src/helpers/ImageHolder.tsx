@@ -41,7 +41,7 @@ function ImageHolder({
 
   imgStyle = removeEmpty(imgStyle); // remove null values
 
-  const plainHolder = <div className="placeHolder animate" style={imgStyle} />;
+  const plainHolder = <div className="placeHolder animate" style={{ ...imgStyle, borderRadius: style?.borderRadius || imgStyle.borderRadius }} />;
 
   return (
     <div style={{ position: 'relative', display: 'inline-block' }}>

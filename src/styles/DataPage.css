@@ -1,0 +1,109 @@
+/* Shared Brutalist Data Page Styles */
+
+.data-page {
+  min-height: 100vh;
+}
+
+.page-header-full {
+  background: var(--bg-secondary);
+  padding: 3rem 2rem;
+  border-bottom: 4px solid var(--border-color);
+  position: relative;
+  margin-bottom: 0;
+}
+
+.header-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: var(--accent-secondary);
+}
+
+.facts-stripe {
+  background: var(--accent-tertiary);
+}
+
+.page-title-full {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.title-prefix {
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  color: var(--text-secondary);
+  font-weight: 900;
+}
+
+.search-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.results-count {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-heading);
+}
+
+.count-number {
+  font-size: 3rem;
+  color: var(--accent-primary);
+  line-height: 1;
+}
+
+.count-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header-full {
+    padding: 2rem 1.5rem;
+  }
+
+  .page-title-full {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .title-prefix {
+    font-size: 0.85rem;
+  }
+
+  .count-number {
+    font-size: 2rem;
+  }
+
+  .count-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header-full {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title-full {
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
+  }
+
+  .header-stripe {
+    height: 8px;
+  }
+}

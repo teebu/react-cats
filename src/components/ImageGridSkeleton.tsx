@@ -2,13 +2,16 @@ import Skeleton from './Skeleton';
 
 const ImageGridSkeleton = ({ count = 15 }) => {
   return (
-    <ul className="fancy-img-list shadowlink">
+    <div className="brutalist-grid" style={{ padding: '2rem' }}>
       {Array.from({ length: count }).map((_, i) => (
-        <li key={i} style={{ borderRadius: '120px' }}>
-          <Skeleton height="300px" borderRadius="120px" />
-        </li>
+        <div key={i} className="grid-item">
+          <div className="item-number">{String(i + 1).padStart(3, '0')}</div>
+          <div className="image-wrapper">
+            <Skeleton height="300px" width="100%" borderRadius="0px" />
+          </div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 

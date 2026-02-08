@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import '../App.css';
+import '../styles/DataPage.css';
 import FancyList from '../helpers/FancyList';
 import Skeleton from '../components/Skeleton';
 import SearchBar from '../components/SearchBar';
@@ -45,11 +46,11 @@ function Facts() {
   if (loading) {
     return (
       <div style={{ padding: '2rem' }}>
-        <Skeleton height="40px" width="280px" borderRadius="8px" />
+        <Skeleton height="40px" width="280px" borderRadius="0px" />
         <div style={{ marginTop: '1rem' }}>
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} style={{ marginBottom: '0.5rem' }}>
-              <Skeleton height="50px" borderRadius="8px" />
+              <Skeleton height="50px" borderRadius="0px" />
             </div>
           ))}
         </div>
@@ -58,15 +59,24 @@ function Facts() {
   }
 
   return (
-    <div>
-      <h1>Random Cat Facts</h1>
-      <SearchBar onSearch={setSearchQuery} placeholder="Search facts..." />
-      {searchQuery && (
-        <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>
-          Found {filteredFacts.length} fact{filteredFacts.length !== 1 ? 's' : ''}
-        </p>
-      )}
-      <FancyList data={cleanUpData(filteredFacts)} />
+    <div className="data-page facts-page">
+      <div className="page-header-full">
+        <div className="header-stripe facts-stripe"></div>
+        <h1 className="page-title-full">
+          <span className="title-prefix">TRIVIA //</span>
+          CAT FACTS
+        </h1>
+        <div className="search-wrapper">
+          <SearchBar onSearch={setSearchQuery} placeholder="SEARCH: KEYWORDS" />
+        </div>
+        {searchQuery && (
+          <div className="results-count">
+            <span className="count-number">{filteredFacts.length}</span>
+            <span className="count-text">FACTS MATCH</span>
+          </div>
+        )}
+      </div>
+      <FancyList data={cleanUpData(filteredFacts)} type="facts" />
     </div>
   );
 }

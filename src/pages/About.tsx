@@ -18,12 +18,12 @@ function About() {
 
         <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Technologies Used</h3>
         <ul style={{ textAlign: 'left', display: 'inline-block', marginBottom: '1.5rem', lineHeight: '2' }}>
-          <li><strong>React 18.3</strong> - Component-based UI with hooks</li>
-          <li><strong>TypeScript</strong> - Type-safe development</li>
+          <li><strong>React 19.0</strong> - Latest React with enhanced performance</li>
+          <li><strong>TypeScript 5.7</strong> - Full type safety throughout the app</li>
           <li><strong>React Router v7</strong> - Client-side routing with HashRouter</li>
-          <li><strong>Vite</strong> - Fast build tool and dev server</li>
+          <li><strong>Vite 7.3</strong> - Fast build tool and dev server</li>
           <li><strong>Vitest</strong> - Modern testing framework</li>
-          <li><strong>ESLint & Prettier</strong> - Code quality and formatting</li>
+          <li><strong>ESLint 10 & Prettier</strong> - Code quality and formatting</li>
         </ul>
 
         <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Features</h3>

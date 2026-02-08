@@ -21,6 +21,7 @@ interface CatsProps {
 function Cats({ size = 15 }: CatsProps) {
   const [catsData, setCatsData] = useState<CatData[]>([]);
   const [loading, setLoading] = useState(false);
+  const [showSkeleton, setShowSkeleton] = useState(false);
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 
@@ -28,6 +29,14 @@ function Cats({ size = 15 }: CatsProps) {
     if (loading || !hasMore) return;
 
     setLoading(true);
+
+    // Only show skeleton if loading takes longer than 300ms
+    const skeletonTimer = setTimeout(() => {
+      if (catsData.length === 0) {
+        setShowSkeleton(true);
+      }
+    }, 300);
+
     try {
       const res = await fetch(
         `https://api.thecatapi.com/v1/images/search?limit=${size}&order=random&size=small`
@@ -43,9 +52,11 @@ function Cats({ size = 15 }: CatsProps) {
     } catch (error) {
       console.error('Failed to fetch cats:', error);
     } finally {
+      clearTimeout(skeletonTimer);
       setLoading(false);
+      setShowSkeleton(false);
     }
-  }, [size, loading, hasMore]);
+  }, [size, loading, hasMore, catsData.length]);
 
   useEffect(() => {
     fetchCatData();
@@ -70,8 +81,10 @@ function Cats({ size = 15 }: CatsProps) {
         </div>
       </div>
 
-      {catsData.length === 0 && loading ? (
+      {catsData.length === 0 && showSkeleton ? (
         <ImageGridSkeleton count={size} />
+      ) : catsData.length === 0 && loading ? (
+        <div style={{ minHeight: '60vh' }} />
       ) : (
         <>
           <div className="brutalist-grid">

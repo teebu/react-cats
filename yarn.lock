@@ -749,6 +749,13 @@
   dependencies:
     tinyrainbow "^3.0.3"
 
+"@vitest/pretty-format@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@vitest/pretty-format/-/pretty-format-5.0.2.tgz#d0c43c240f9f0d2649b87ff77218c0e8592697d2"
+  integrity sha512-YHM+mQQ7N1ROHMugJ7P/M+fC/q1G4zs/iAMZZCvhHcY8WkwPQcXBHD+z18oz+808Cfa12K7jOr3XPQMcLIovjw==
+  dependencies:
+    tinyrainbow "^3.1.1"
+
 "@vitest/runner@4.0.18":
   version "4.0.18"
   resolved "https://registry.npmjs.org/@vitest/runner/-/runner-4.0.18.tgz"
@@ -768,17 +775,17 @@
   version "4.0.18"
   resolved "https://registry.npmjs.org/@vitest/spy/-/spy-4.0.18.tgz"
 
-"@vitest/ui@^4.0.18":
-  version "4.0.18"
-  resolved "https://registry.npmjs.org/@vitest/ui/-/ui-4.0.18.tgz"
+"@vitest/ui@^5.0.0":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@vitest/ui/-/ui-5.0.2.tgz#c12787c8b2beb6280929e19575841463b30e7906"
+  integrity sha512-FRGWhLK/S+aaAtty/5d+jTtY5l+9pGNcjz6IHbyUiP3VWs6a+zIgU4lc1SzWCR7H+OXgetAI06i/VpCWQmVorQ==
   dependencies:
-    "@vitest/utils" "4.0.18"
-    fflate "^0.8.2"
-    flatted "^3.3.3"
+    "@vitest/utils" "5.0.2"
+    fflate "^0.8.3"
+    flatted "^3.4.4"
     pathe "^2.0.3"
     sirv "^3.0.2"
-    tinyglobby "^0.2.15"
-    tinyrainbow "^3.0.3"
+    tinyrainbow "^3.1.1"
 
 "@vitest/utils@4.0.18":
   version "4.0.18"
@@ -786,6 +793,15 @@
   dependencies:
     "@vitest/pretty-format" "4.0.18"
     tinyrainbow "^3.0.3"
+
+"@vitest/utils@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@vitest/utils/-/utils-5.0.2.tgz#035ef29ef0a18d429e7d75c2fc61336c5ff27357"
+  integrity sha512-mgpUtxFhKeOKVaArBVHNJGdYHAeRh135o59l13uVmPUCS1OUtis5pBqXEgE25iqRgFqEBwXvJlkhknRsYnMeqg==
+  dependencies:
+    "@vitest/pretty-format" "5.0.2"
+    convert-source-map "^2.0.0"
+    tinyrainbow "^3.1.1"
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
@@ -1507,9 +1523,10 @@ fdir@^6.5.0:
   version "6.5.0"
   resolved "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz"
 
-fflate@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz"
+fflate@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/fflate/-/fflate-0.8.3.tgz#bc27d8eb30343d4d512abb03480202ce65d825fc"
+  integrity sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==
 
 file-entry-cache@^8.0.0:
   version "8.0.0"
@@ -1531,9 +1548,14 @@ flat-cache@^4.0.0:
     flatted "^3.2.9"
     keyv "^4.5.4"
 
-flatted@^3.2.9, flatted@^3.3.3:
+flatted@^3.2.9:
   version "3.3.3"
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.3.3.tgz"
+
+flatted@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.4.4.tgz#aeeca2a506303f0cee61c59e6c9f2a88d2f29fc6"
+  integrity sha512-5+ybhBZANEJxaH3X5evAFatUxLfEHSr7n6kYJ+1Qd0mUqr4eu9gIf6GDbWHf8RJijHrjjO8G+la14SlL2SeS1Q==
 
 for-each@^0.3.3, for-each@^0.3.5:
   version "0.3.5"
@@ -2625,6 +2647,11 @@ tinyglobby@^0.2.15:
 tinyrainbow@^3.0.3:
   version "3.0.3"
   resolved "https://registry.npmjs.org/tinyrainbow/-/tinyrainbow-3.0.3.tgz"
+
+tinyrainbow@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/tinyrainbow/-/tinyrainbow-3.1.1.tgz#c0168387d3d8d70b6b3c2c0936de5fee738cea20"
+  integrity sha512-yau8yJdTt989Mm0Bd/236QnzEiPf2xLLTqUZRUJOo/3CB078LSwzei343DgtJVmfJKJE3TMINY1u42SQsP6mXw==
 
 tldts-core@^7.0.22:
   version "7.0.22"
